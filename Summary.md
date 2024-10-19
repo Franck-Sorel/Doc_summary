@@ -40,7 +40,7 @@ You3 can specify the name of the virtual machine when launching it. This helps y
 multipass launch --name docker-vm
 ```
 
-The --name flag allows you to assign a custom name to the VM, in this case, docker-vm.
+**The --name flag allows you to assign a custom name to the VM, in this case, docker-vm.**
 
 ###### 5. View Available Multipass Images
 If you're unsure which images you can use to launch a VM, you can view all available images using the multipass images command.
@@ -49,7 +49,7 @@ If you're unsure which images you can use to launch a VM, you can view all avail
 multipass images
 ```
 
-This will display a list of available images, such as Ubuntu versions, that can be used for launching new VMs.
+*This will display a list of available images, such as Ubuntu versions, that can be used for launching new VMs.*
 
 ####### 6. Check Running Docker Containers
 Once Docker is installed in the VM, you can check the status of containers using the docker ps command inside the VM.
@@ -58,7 +58,7 @@ Once Docker is installed in the VM, you can check the status of containers using
 docker ps
 ```
 
-This command lists all the running Docker containers, including their names, statuses, and port mappings.
+*This command lists all the running Docker containers, including their names, statuses, and port mappings.*
 
 ## 7. Access a Docker Container via Portainer
 To access a Docker container running on the VM from your host machine, you need to know the VM's IP address and the port the container is exposed on.
@@ -75,7 +75,7 @@ Then, map the port of the container running in Docker (e.g., Portainer) to the h
 
 
 [http://192.168.64.2:9000]
-This would allow you to access the Portainer web interface running on port 9000 of your Docker VM.
+*This would allow you to access the Portainer web interface running on port 9000 of your Docker VM.*
 
 ## 8. Link Host Machine with Virtual Machine
 To facilitate easier interaction between the host machine and the Docker VM, you can set up network forwarding, or mount directories from the host into the VM for file sharing. Here's how you can mount a directory:
@@ -84,7 +84,7 @@ To facilitate easier interaction between the host machine and the Docker VM, you
 multipass mount /host/directory docker-vm:/vm/directory
 ```
 
-This command mounts /host/directory from your local machine into /vm/directory in the virtual machine, allowing easy file access between the two systems.
+*This command mounts /host/directory from your local machine into /vm/directory in the virtual machine, allowing easy file access between the two systems.*
 
 ## 9. Execute Docker Commands in VM from Host
 Instead of entering the VM's shell to run Docker commands, you can execute commands directly from the host machine using Multipass exec.
@@ -93,7 +93,7 @@ Instead of entering the VM's shell to run Docker commands, you can execute comma
 multipass exec docker-vm -- docker ps
 ```
 
-This command will execute the docker ps command inside the docker-vm and display the output directly on your host machine.
+*This command will execute the docker ps command inside the docker-vm and display the output directly on your host machine.*
 
 ## 10. Create a Docker Alias for Ease of Use
 To simplify running Docker commands inside the VM from the host, you can create an alias that allows you to run docker commands on your host, but they are executed inside the VM.
@@ -104,10 +104,10 @@ Add this alias to your .bashrc or .zshrc file:
 alias docker="multipass exec docker-vm -- docker"
 ```
 
-Now, you can run any docker command as if Docker were installed locally, and it will execute inside the docker-vm:
+> Now, you can run any docker command as if Docker were installed locally, and it will execute inside the docker-vm:
 
 ```sh 
 docker ps
 ```
 
-This allows for seamless interaction with Docker containers running inside your virtual machine
+*This allows for seamless interaction with Docker containers running inside your virtual machine*
